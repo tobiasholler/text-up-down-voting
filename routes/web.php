@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/", "TextController@showRandomText")->name("show_random_text");
+Route::get("/toplist", "TextController@topList")->name("top_list");
+Route::get("/{id}", "TextController@showText")->name("show_text");
+Route::post("/upvote/{id}", "TextController@upvote")->name("upvote");
+Route::post("/downvote/{id}", "TextController@downvote")->name("downvote");

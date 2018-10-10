@@ -14,8 +14,8 @@ class CreateTextsTable extends Migration {
         Schema::create("texts", function (Blueprint $table) {
             $table->increments("id");
             $table->string("text");
-            $table->unsignedInteger("upvotes");
-            $table->unsignedInteger("downvotes");
+            $table->unsignedInteger("upvotes")->default(0);
+            $table->unsignedInteger("downvotes")->default(0);
             $table->timestamps();
         });
     }
